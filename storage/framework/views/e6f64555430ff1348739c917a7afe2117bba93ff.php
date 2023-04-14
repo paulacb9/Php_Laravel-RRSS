@@ -1,0 +1,1 @@
+<h1>Listado de likes</h1><?php /**PATH C:\wamp64\www\Curso-PHP\proyecto-laravel\resources\views/like/likes.blade.php ENDPATH**/ ?>
