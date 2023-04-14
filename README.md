@@ -2,7 +2,7 @@
 # IMPORTANT!!! #
 
 The files in the next folders are not imported:
- node_modules
+\n node_modules
  vendor
 (in the installation of Laravel will be includeds automaticly)
 
