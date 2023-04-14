@@ -4,6 +4,7 @@
 The files in the next folders are not imported:
 -  node_modules
 -  vendor
+
 (in the installation of Laravel will be includeds automaticly)
 
 //
@@ -11,6 +12,7 @@ The files in the next folders are not imported:
 Los archivos en las siguientas pastas no estan importados:
 - node_modules
 -  vendor
+
 (en la instalación de Laravel seran incluidos automaticamente)
 
 
