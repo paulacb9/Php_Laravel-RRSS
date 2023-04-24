@@ -1,41 +1,62 @@
 
-# IMPORTANT!!! #
-
-The files in the next folders are not imported:
--  node_modules
--  vendor
-
-(in the installation of Laravel will be includeds automaticly)
-
-//
-
+IMPORTANTE:
 Los archivos en las siguientas pastas no estan importados:
 - node_modules
 -  vendor
 
-(en la instalación de Laravel seran incluidos automaticamente)
+(en la creación del proyecto de Laravel seran incluidos automaticamente)
 
 
-## About Laravel
-This project is devoloped with Laravel framework
+## Crear el proyecto Laravel desde el CMD:
+- Entrar na carpeta del proyecto
+	cd C:/wamp64/www/Curso-PHP
 
-## About Laravel
+- Generar el poryecto (nombre proyecto 'proyecto-laravel')
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+	composer create-project laravel/laravel proyecto-laravel --prefer-dist
+  
+## Generar Host Virtual
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- En el archivo 'httpd-vhosts.conf' en la carpeta C:\wamp64\bin\apache\apache2.4.51\conf\extra añadir:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+	<VirtualHost *:80>   
+    		DocumentRoot "${INSTALL_DIR}/www/Curso-PHP/proyecto-laravel/public"
+    		ServerName proyecto-laravel.com.devel
 
-## Learning Laravel
+    		<Directory "${INSTALL_DIR}/www/Curso-PHP/proyecto-laravel/public">
+        		Options Indexes FollowSymLinks     
+        		AllowOverride All
+        		Order Deny,Allow
+        		Allow from all     
+   	 	</Directory> 
+	</VirtualHost>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- En el archivo 'host' en la carpeta C:\Windows\System32\drivers\etc añadir:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+	127.0.0.1 proyecto-laravel.com.devel
+
+- Reiniciar el servidor Web 
+
+## Crear diagrama en DIA y Base de Datos con SQL 
+![DiagramaTienda](https://user-images.githubusercontent.com/124586059/234130681-d34846c2-ec64-400c-bd7e-7034d417eef9.jpeg)
+
+## Vincular BD con el proyecto 
+- En el archivo .env
+
+	APP_URL=http://proyecto-laravel.com.devel/
+
+	DB_CONNECTION=mysql
+	DB_HOST=127.0.0.1
+	DB_PORT=3308
+	DB_DATABASE=laravel_master
+	DB_USERNAME=root
+	DB_PASSWORD=null
+
+- En el CMD vincular y crear Modelos, en el CMD dentro de la carpeta del proyecto:
+
+	php artisan make:model Image
+
+	php artisan make:model Comment
+
+	php artisan make:model Like
 
