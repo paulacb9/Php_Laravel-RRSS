@@ -1,10 +1,8 @@
 
-IMPORTANTE:
-Los archivos en las siguientas pastas no estan importados:
-- node_modules
--  vendor
+# Php_Laravel-RRSS
+Proyecto de una red social
 
-(en la creación del proyecto de Laravel seran incluidos automaticamente)
+IMPORTANT: no importados los ficheros node_modules, vendor.... instalar/crear proyecto de Laravel para generarse automaticamente
 
 
 ## Crear el proyecto Laravel desde el CMD:
